@@ -1,4 +1,5 @@
 import React from "react";
+import style from "./Maze.module.css"
 
 const Maze = () => {
   const findPath = (maze, point, result) => {
@@ -75,14 +76,14 @@ const Maze = () => {
   findPath(maze, startPoint, path);
 
   return (
-    <div>
+    <div className={style.maze}>
       <div>
         <p>The way out from Maze:</p>
       </div>
       <div>
-        {path.map((m) => (
+        <b> The trajectory to exit the maze: </b> <span className={style.maze_trajectory}>{path.map((m) => (
           <span>{m + " "}</span>
-        ))}
+        ))}</span>
       </div>
     </div>
   );

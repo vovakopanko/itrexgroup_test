@@ -5,10 +5,10 @@ import style from "./Menu.module.css";
 const Menu = () => {
   return (
     <div className={style.menu_block}>
-      <NavLink to="/maze" activeClassName={style.activeLink}>
+      <NavLink to="/maze" activeClassName={style.activeLink} className={style.menu_link}>
         <b>Maze</b>
       </NavLink>
-      <NavLink to="/ratecurrency" activeClassName={style.activeLink}>
+      <NavLink to="/ratecurrency" activeClassName={style.activeLink} className={style.menu_link}>
         <b>RateCurrency</b>
       </NavLink>
     </div>
