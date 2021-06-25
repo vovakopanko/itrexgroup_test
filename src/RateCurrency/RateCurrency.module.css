@@ -1,0 +1,14 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blockCur {
+  text-align: center;
+}
+
+.siteCardBorderLessWrapper {
+  padding: 30px;
+  background: #ececec;
+}
