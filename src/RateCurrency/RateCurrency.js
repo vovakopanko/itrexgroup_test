@@ -29,6 +29,9 @@ const RateCurrency = () => {
                     <b>Abbreviation: </b> {m.Cur_Abbreviation}
                   </p>
                   <p>
+                  <b>Amount of currency : </b>{m.Cur_Scale} 
+                  </p>
+                  <p>
                     <b>Date: </b>
                     {new Date(m.Date).toLocaleDateString()}
                   </p>
