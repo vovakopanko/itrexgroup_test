@@ -1,18 +1,17 @@
 .menu_block {
-  font-size: 36px;
-  color: black;
+  color: black
 }
 
-.menu_block a {
+.menu_link {
+  font-size: 36px;
   padding: 10px;
   text-decoration: none;
-  color: black;
 }
 
-.menu_block a:hover{
-    color: orange;
+.menu_link:hover {
+  color: rgb(179, 131, 41);
 }
 
-.activeLink{
-    color:orange
+.activeLink {
+  color: orange;
 }

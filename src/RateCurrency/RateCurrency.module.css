@@ -1,14 +1,14 @@
-.flex {
+.currency {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.blockCur {
+.currency_table {
   text-align: center;
 }
 
-.siteCardBorderLessWrapper {
+.currency_siteCard {
   padding: 30px;
   background: #ececec;
 }
