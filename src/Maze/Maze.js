@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const findNext = (maze, point, result) => {
+const findPath = (maze, point, result) => {
   maze[point.x][point.y] = "visited"; // mark current point as visited
 
   // check if we've reached exit
@@ -8,7 +8,7 @@ const findNext = (maze, point, result) => {
     point.x === 0 ||
     point.y === 0 ||
     point.x + 1 === maze.length ||
-    point.y + 1 == maze[point.x].length
+    point.y + 1 === maze[point.x].length
   ) {
     return true;
   }
@@ -40,7 +40,7 @@ const findNext = (maze, point, result) => {
   for (let index = 0; index < currentQueue.length; index++) {
     const point = currentQueue[index];
     result.push(point.direction);
-    exitFound = findNext(maze, point, result);
+    exitFound = findPath(maze, point, result);
 
     // if we got stuck then remove last direction from paths array
     if (!exitFound) {
@@ -57,11 +57,11 @@ const Maze = () => {
     ["#", "#", "#", "#", "#", "#", "#", "#", "#"],
     ["#", "+", "+", "+", "#", "+", "+", "+", "#"],
     ["#", "+", "#", "+", "#", "+", "#", "+", "#"],
-    ["+", "+", "#", "+", "0", "+", "#", "+", "#"],
-    ["#", "#", "#", "+", "#", "#", "#", "#", "#"],
-    ["#", "#", "+", "+", "#", "#", "#", "#", "#"],
-    ["#", "#", "+", "#", "#", "#", "#", "#", "#"],
-    ["#", "#", "#", "#", "#", "#", "#", "#", "#"],
+    ["#", "+", "#", "+", "0", "+", "#", "+", "#"],
+    ["#", "#", "#", "+", "#", "#", "#", "+", "#"],
+    ["#", "#", "+", "+", "#", "#", "+", "+", "#"],
+    ["#", "#", "+", "#", "#", "#", "+", "#", "#"],
+    ["#", "#", "+", "#", "#", "#", "+", "#", "#"],
   ]);
 
   const copy = maze.map((row) => {
