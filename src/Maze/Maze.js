@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const findPath = (maze, point, result) => {
+const findNext = (maze, point, result) => {
   maze[point.x][point.y] = "visited"; // mark current point as visited
 
   // check if we've reached exit
@@ -8,7 +8,7 @@ const findPath = (maze, point, result) => {
     point.x === 0 ||
     point.y === 0 ||
     point.x + 1 === maze.length ||
-    point.y + 1 === maze[point.x].length
+    point.y + 1 == maze[point.x].length
   ) {
     return true;
   }
@@ -34,20 +34,21 @@ const findPath = (maze, point, result) => {
     currentQueue.push({ x: point.x, y: point.y - 1, direction: "left" });
   }
 
-  let wayOutFound; //Scope
+  let exitFound;
 
   // run through queue for current point
-  currentQueue.forEach((point) => {
+  for (let index = 0; index < currentQueue.length; index++) {
+    const point = currentQueue[index];
     result.push(point.direction);
-    wayOutFound = findPath(maze, point, result);
+    exitFound = findNext(maze, point, result);
 
     // if we got stuck then remove last direction from paths array
-    if (!wayOutFound) {
+    if (!exitFound) {
       result.pop();
-    }
-  });
+    } else break;
+  }
 
-  return wayOutFound;
+  return exitFound;
 };
 
 const Maze = () => {
